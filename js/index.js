@@ -33,6 +33,7 @@ images[0].addEventListener("mouseenter", () => {
   images[2].addEventListener("click", () => {
     images[2].style.transform = "scale(1)";
     images[2].style.transition = "transform 0.3s";
+    event.stopPropagation();
   });
   images[2].addEventListener("mouseleave", () => {
     images[2].style.transform = "scale(1)";
@@ -60,3 +61,28 @@ buttons[0].addEventListener("click", () => {
     destinations[2].classList.add("error");
   });
 
+
+//Stop the navigation items from refreshing the page by using preventDefault()
+  const stopLink = document.querySelector(".nav-link");
+
+  stopLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    console.log("stopped the link");
+  })
+
+
+//Nest two similar events somewhere in the site and prevent the event propagation properly
+  const body = document.querySelector('body');
+  const sections = document.querySelectorAll('section');
+body.addEventListener('click', () =>{
+  body.style.backgroundColor="skyblue";
+  console.log("Me last!")
+    
+});
+
+sections.forEach(section => section.addEventListener('click', () =>{
+    section.style.backgroundColor="orange";
+    console.log("Me first!")
+     event.stopPropagation();
+  })
+)
