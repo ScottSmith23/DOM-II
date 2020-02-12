@@ -180,7 +180,7 @@ img {
   background: #FFFFFF;
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
-  z-index: 2;
+  z-index: 99;
 }
 .main-navigation .nav-container {
   height: 100%;
@@ -353,4 +353,12 @@ img {
 }
 .error {
   text-decoration: line-through;
+}
+.yeet2 {
+  z-index: 30;
+  position: absolute;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  top: 90px;
 }

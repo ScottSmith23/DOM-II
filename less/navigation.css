@@ -4,13 +4,13 @@
   background: #FFFFFF;
   border-bottom: 2px dashed #C0C0C0;
   position: fixed;
+  z-index: 99;
 }
 .main-navigation .nav-container {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
 @media (max-width: 500px) {
   .main-navigation .nav-container {

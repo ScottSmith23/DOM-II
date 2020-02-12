@@ -3,42 +3,42 @@
 const images = document.querySelectorAll("img");
 const buttons = document.querySelectorAll(".btn");
 const destinations = document.querySelectorAll(".destination");
-images[0].addEventListener("mouseenter", () => {
-    images[0].style.transform = "scale(1.2)";
-    images[0].style.transition = "transform 0.3s";
-  });
+// images[0].addEventListener("mouseenter", () => {
+//     images[0].style.transform = "scale(1.2)";
+//     images[0].style.transition = "transform 0.3s";
+//   });
 
-  images[0].addEventListener("mouseleave", () => {
-    images[0].style.transform = "scale(1)";
-  });
+//   images[0].addEventListener("mouseleave", () => {
+//     images[0].style.transform = "scale(1)";
+//   });
 
   window.addEventListener("resize", () => {
-    images[1].src = "img/adventure2.jpg"
-    images[1].style.transition = "transform 1s";
+    images[2].src = "img/adventure2.jpg"
+    images[2].style.transition = "transform 1s";
   });
 
-  images[1].addEventListener("mouseleave", () => {
-    images[1].src = "img/adventure.jpg"
-    images[1].style.transition = "transform 1s";
+  images[2].addEventListener("mouseleave", () => {
+    images[2].src = "img/adventure.jpg"
+    images[2].style.transition = "transform 1s";
   });
 //mouseover
-  images[2].addEventListener("mouseover", () => {
-    images[2].style.transform = "scale(1.2)";
-    images[2].style.transition = "transform 0.3s";
+  images[3].addEventListener("mouseover", () => {
+    images[3].style.transform = "scale(1.2)";
+    images[3].style.transition = "transform 0.3s";
   });
 //keydown
   window.addEventListener("keydown", () => {
-    images[2].style.transform = "scale(4)";
-    images[2].style.transition = "transform 0.3s";
+    images[3].style.transform = "scale(4)";
+    images[3].style.transition = "transform 0.3s";
   });
-  images[2].addEventListener("click", () => {
-    images[2].style.transform = "scale(1)";
-    images[2].style.transition = "transform 0.3s";
+  images[3].addEventListener("click", () => {
+    images[3].style.transform = "scale(1)";
+    images[3].style.transition = "transform 0.3s";
     
   });
-  images[2].addEventListener("mouseleave", () => {
-    images[2].style.transform = "scale(1)";
-    images[2].style.transition = "transform 0.3s";
+  images[3].addEventListener("mouseleave", () => {
+    images[3].style.transform = "scale(1)";
+    images[3].style.transition = "transform 0.3s";
   });
 
 buttons[0].addEventListener("click", () => {
@@ -78,6 +78,7 @@ buttons[0].addEventListener("click", () => {
 body.addEventListener('click', () =>{
   body.style.backgroundColor="skyblue";
   console.log("Me last!")
+  
     
 });
 
@@ -87,3 +88,39 @@ sections.forEach(section => section.addEventListener('click', () =>{
      event.stopPropagation();
   })
 )
+
+//animations
+const busfloat = document.querySelector(".yeet2");
+const busBef = document.querySelector(".yeet");
+
+busfloat.addEventListener('click', () =>{
+busBef.src = "img/fun-bus-wheels.png"
+busBef.style.transition = "0.3s";
+Draggable.create(".yeet2", {
+    type:"x,y",
+    bounds: document.querySelector(".container home"),
+    inertia: true,
+});
+event.stopPropagation();
+busBef.style.left = "initial";
+});
+
+document.querySelectorAll(".logo-heading").forEach(el => {
+    el.addEventListener("mouseenter", () => {
+      gsap.to(el, {
+       duration: 1,
+       rotate: 360,
+       ease: "elastic(1, 0.75)"
+      }).restart()
+    })
+  });
+
+  document.querySelectorAll(".logo-heading").forEach(el => {
+    el.addEventListener("mouseleave", () => {
+      gsap.to(el, {
+       duration: 1,
+       rotate: 720,
+       ease: "elastic(1, 0.75)"
+      }).restart()
+    })
+  });
