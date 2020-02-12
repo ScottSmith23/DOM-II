@@ -1,34 +1,29 @@
 
 
-const redBlock = document.querySelector(".block--red");
-const blueBlock = document.querySelector(".block--blue");
-const greenBlock = document.querySelector(".block--green");
-const pinkBlock = document.querySelector(".block--pink");
-const grayBlock = document.querySelector(".block--gray");
+// const redBlock = document.querySelector(".block--red");
+// const blueBlock = document.querySelector(".block--blue");
+// const greenBlock = document.querySelector(".block--green");
+// const pinkBlock = document.querySelector(".block--pink");
+// const grayBlock = document.querySelector(".block--gray");
+
 
 const blockList = document.querySelectorAll(".block");
 const topblock = document.querySelector(".blocks");
+  for (const blocky of blockList) {
+    blocky.addEventListener('click', function(event) {
+      topblock.prepend(blocky)
+    })
+  };
 
-redBlock.addEventListener("click", () => {
-    topblock.prepend(redBlock);
-  });
-
-  blueBlock.addEventListener("click", () => {
-    topblock.prepend(blueBlock);
-  });
-
-  greenBlock.addEventListener("click", () => {
-    topblock.prepend(greenBlock);
-  });
-
-  pinkBlock.addEventListener("click", () => {
-    pinkBlock.style.transition = "transform 1s";
-    topblock.prepend(pinkBlock);
-   
-  });
-
-  grayBlock.addEventListener("click", () => {
-    topblock.prepend(grayBlock);
-  });
-
-
+  for (const blocky of blockList) {
+    blocky.addEventListener('mousedown', function(event) {
+        blocky.style.transform = "translateX(1000px)"
+        blocky.style.transition = "all 10s";
+    })
+  };
+  for (const blocky of blockList) {
+  document.addEventListener("mouseup", () => {
+    blocky.style.transform = "translateX(0px)"
+    blocky.style.transition = "all 10s ";
+  })
+  };
