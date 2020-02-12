@@ -12,7 +12,7 @@ images[0].addEventListener("mouseenter", () => {
     images[0].style.transform = "scale(1)";
   });
 
-  images[1].addEventListener("dblclick", () => {
+  window.addEventListener("resize", () => {
     images[1].src = "img/adventure2.jpg"
     images[1].style.transition = "transform 1s";
   });
@@ -21,19 +21,20 @@ images[0].addEventListener("mouseenter", () => {
     images[1].src = "img/adventure.jpg"
     images[1].style.transition = "transform 1s";
   });
-
-  images[2].addEventListener("mouseenter", () => {
+//mouseover
+  images[2].addEventListener("mouseover", () => {
     images[2].style.transform = "scale(1.2)";
     images[2].style.transition = "transform 0.3s";
   });
-  images[2].addEventListener("dblclick", () => {
+//keydown
+  window.addEventListener("keydown", () => {
     images[2].style.transform = "scale(4)";
     images[2].style.transition = "transform 0.3s";
   });
   images[2].addEventListener("click", () => {
     images[2].style.transform = "scale(1)";
     images[2].style.transition = "transform 0.3s";
-    event.stopPropagation();
+    
   });
   images[2].addEventListener("mouseleave", () => {
     images[2].style.transform = "scale(1)";
