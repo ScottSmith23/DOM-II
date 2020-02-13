@@ -95,12 +95,20 @@ const busBef = document.querySelector(".yeet");
 
 busfloat.addEventListener('click', () =>{
 busBef.src = "img/fun-bus-wheels.png"
+busfloat.src = "img/funbus2.png"
 busBef.style.transition = "0.3s";
 Draggable.create(".yeet2", {
     type:"x,y",
     bounds: document.querySelector(".container home"),
     inertia: true,
 });
+busfloat.addEventListener("click", () => {
+    gsap.to(busfloat, {
+     duration: 1,
+     x: '38%',
+     ease: "bounce"
+    }).restart()
+  })
 event.stopPropagation();
 busBef.style.left = "initial";
 });
