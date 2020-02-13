@@ -95,7 +95,7 @@ const busBef = document.querySelector(".yeet");
 
 busfloat.addEventListener('click', () =>{
 busBef.src = "img/fun-bus-wheels.png"
-busfloat.src = "img/funbus2.png"
+// busfloat.src = "img/funbus2.png"
 busBef.style.transition = "0.3s";
 Draggable.create(".yeet2", {
     type:"x,y",
@@ -132,3 +132,11 @@ document.querySelectorAll(".logo-heading").forEach(el => {
       }).restart()
     })
   });
+
+  const buttonz = document.querySelector('.btn');
+
+  buttonz.addEventListener("click", event => {
+
+    busfloat.src = "img/funbus2.png"
+
+  })
